@@ -22,7 +22,7 @@ python3 -m http.server 5173
 
 ## Publish on GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` publishes the site every time `main` is pushed. It uploads only `index.html`, `css/` and `js/`. One-time setup:
+The workflow in `.github/workflows/pages.yml` publishes the site every time `main` is pushed. It uploads only the site itself: `index.html`, `css/`, `js/`, the icons and `site.webmanifest`. One-time setup:
 
 1. On GitHub, open the repository's **Settings → Pages**.
 2. Under **Build and deployment → Source**, choose **GitHub Actions**.
@@ -37,3 +37,4 @@ The site will be at **https://kevinsornet.github.io/Tennyson/**.
 - `js/reflections.js`: reflective lessons and journal prompts keyed by poem id.
 - `js/app.js`: the app.
 - `css/styles.css`: styles, including light and dark themes.
+- `favicon.svg`: the icon, a serif “T” on gold. The PNGs (`favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`) are rendered from it.
