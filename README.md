@@ -20,6 +20,16 @@ It's a static site with no build step. Open `index.html` in a browser, or serve 
 python3 -m http.server 5173
 ```
 
+## Publish on GitHub Pages
+
+The workflow in `.github/workflows/pages.yml` publishes the site every time `main` is pushed. It uploads only `index.html`, `css/` and `js/`. One-time setup:
+
+1. On GitHub, open the repository's **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main`, or run the workflow by hand from the **Actions** tab.
+
+The site will be at **https://kevinsornet.github.io/Tennyson/**.
+
 ## Files
 
 - `js/poems.js`: poem texts. Stanzas are arrays of lines, and `{h: "..."}` entries are section headings.
