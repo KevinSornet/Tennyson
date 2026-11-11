@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tennyson — a poem a day</title>
+  <meta name="description" content="A great poem every day, with notes on what it means." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23a07a3c'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic'>T</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">T</span>
+      <span class="brand-name">Tennyson</span>
+    </div>
+    <div class="topbar-actions">
+      <span class="chip" id="streak" title="Days in a row you've visited"></span>
+      <span class="chip" id="studied" title="Poems you've marked as studied"></span>
+      <button class="icon-btn" id="libraryBtn" aria-label="Open library" title="Library">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5a1 1 0 0 1 1-1h3v15H5a1 1 0 0 1-1-1Zm4 0V4h4v15M12 19V4h3l4 15h-4"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Light / dark">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="daynav" aria-label="Choose day">
+      <button class="icon-btn" id="prevDay" aria-label="Previous day">‹</button>
+      <div class="daylabel">
+        <div class="day-kicker" id="dayKicker">Today’s poem</div>
+        <div class="day-date" id="dayDate"></div>
+      </div>
+      <button class="icon-btn" id="nextDay" aria-label="Next day">›</button>
+    </nav>
+
+    <article class="card">
+      <header class="poem-head">
+        <h1 id="poemTitle"></h1>
+        <p class="byline"><span id="poemAuthor"></span> · <span id="poemYear"></span></p>
+        <p class="stats" id="poemStats"></p>
+      </header>
+
+      <div class="tabs" role="tablist">
+        <button role="tab" data-tab="read" class="tab">Read</button>
+        <button role="tab" data-tab="meaning" class="tab">Meaning</button>
+      </div>
+
+      <section id="stage" class="stage" aria-live="polite"></section>
+    </article>
+
+    <p class="footnote">A new poem every day at midnight. All poems are in the public domain.</p>
+  </main>
+
+  <div class="gloss-pop" id="glossPop" role="tooltip" hidden></div>
+
+  <!-- Library drawer -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Library" hidden>
+    <div class="drawer-head">
+      <h2>Library</h2>
+      <button class="icon-btn" id="closeLibrary" aria-label="Close library">✕</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="Search title or poet…" />
+    <ul class="poem-list" id="poemList"></ul>
+  </aside>
+
+  <script src="js/poems.js"></script>
+  <script src="js/meanings.js"></script>
+  <script src="js/reflections.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
